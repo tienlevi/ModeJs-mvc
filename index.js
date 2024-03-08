@@ -10,6 +10,7 @@ const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// Middleware
 app.use(morgan("dev"));
 app.use(express.json());
 
