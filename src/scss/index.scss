@@ -1,0 +1,48 @@
+@import "./theme.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: red;
+  font-size: 25px;
+}
+
+.search-form {
+  max-width: 1000px;
+  margin: auto;
+
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    height: 50px;
+    border: 1px solid $search-input-border;
+    background-color: $search-input-bg;
+    color: $search-input-color;
+
+    &::placeholder {
+      color: $search-input-color;
+    }
+  }
+
+  .search-button {
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background-color: $search-button-bg;
+    color: $search-button-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($search-button-bg, 10%);
+    }
+
+    i {
+      font-size: 16px;
+    }
+  }
+}
