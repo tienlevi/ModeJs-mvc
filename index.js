@@ -3,6 +3,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import handlebars from "express-handlebars";
 import Routes from "./src/router/routes.js";
 import Connect from "./src/model/Connect.js";
 import { getProducts } from "./src/controllers/ProductData.js";
@@ -17,13 +18,12 @@ Connect();
 
 // Middleware
 app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.engine("handlebars", handlebars.engine({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "src/views"));
 app.use(express.static(path.join(__dirname, "public")));
-app.get("/css/index.css", (req, res) => {
-  res.setHeader("Content-Type", "text/css");
-  res.sendFile(path.join(__dirname, "./src/public/css/index.css"));
-});
 
 // Router
 Routes(app);

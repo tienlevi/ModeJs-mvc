@@ -1,21 +1,18 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import ProductModel from "../model/Products.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 function Routes(app) {
-  app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
-  });
-
-  app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/about.html"));
-  });
-
-  app.get("/search", (req, res) => {
-    console.log(req.query.q);
-    res.sendFile(path.join(__dirname, "../views/search.html"));
+  app.get("/", async (req, res) => {
+    try {
+      // const data = await ProductModel.find();
+      res.render("index");
+    } catch (error) {
+      console.log(error);
+    }
   });
 }
 

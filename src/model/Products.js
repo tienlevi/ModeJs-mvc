@@ -8,6 +8,6 @@ const Product = new Schema({
   createAt: { type: Date, default: Date.now },
 });
 
-const ProductData = mongoose.model("products", Product);
+const ProductModel = mongoose.model("products", Product);
 
-export default ProductData;
+export default ProductModel;
