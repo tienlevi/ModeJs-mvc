@@ -4,9 +4,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import handlebars from "express-handlebars";
-import Routes from "./src/router/routes.js";
-import Connect from "./src/model/Connect.js";
-import { getProducts } from "./src/controllers/ProductData.js";
+import Routes from "./router/routes.js";
+import Connect from "./model/Connect.js";
+import { getProducts } from "./controllers/ProductData.js";
 
 const app = express();
 const port = 3000;
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.engine("handlebars", handlebars.engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, "src/views"));
+app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Router
