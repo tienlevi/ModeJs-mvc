@@ -10,6 +10,18 @@
 h1 {
   color: red;
   font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.content {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
 }
 
 .search-form {

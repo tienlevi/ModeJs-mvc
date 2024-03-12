@@ -6,7 +6,6 @@ import { dirname } from "path";
 import handlebars from "express-handlebars";
 import Routes from "./router/routes.js";
 import Connect from "./model/Connect.js";
-import { getProducts } from "./controllers/ProductData.js";
 
 const app = express();
 const port = 3000;
@@ -27,8 +26,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Router
 Routes(app);
-
-app.get("/api/products", getProducts);
 
 app.listen(port, () => {
   console.log("Localhost is http://localhost:3000");
