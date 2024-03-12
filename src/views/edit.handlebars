@@ -1,0 +1,18 @@
+<div class="login-container">
+  <h2>Sửa sản phẩm</h2>
+  <form method="post" action="/edit/{{product._id}}?_method=PUT" method="POST">
+    <input
+      type="text"
+      name="name"
+      value="{{product.name}}"
+      placeholder="Tên sản phẩm"
+    />
+    <input
+      type="number"
+      name="price"
+      value="{{product.price}}"
+      placeholder="Giá tiền"
+    />
+    <input type="submit" id="submit" value="Sửa" />
+  </form>
+</div>

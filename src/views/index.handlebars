@@ -10,9 +10,12 @@
         <td style="padding: 10px;">{{_id}}</td>
         <td style="padding: 10px;">{{name}}</td>
         <td style="padding: 10px;">{{price}}</td>
-        <td style="padding: 10px;"><button>Sửa</button>
-          |
-          <button>Xóa</button></td>
+        <td style="padding: 10px;">
+          <form action="/delete/{{_id}}?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+          <a href="/edit/{{_id}}">Update</a>
+        </td>
       </tr>
     {{/each}}
   </table>

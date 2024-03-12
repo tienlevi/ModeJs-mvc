@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import handlebars from "express-handlebars";
+import methodOverride from "method-override";
 import Routes from "./router/routes.js";
 import Connect from "./model/Connect.js";
 
@@ -23,6 +24,9 @@ app.engine("handlebars", handlebars.engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
+
+// Middleware in http
+app.use(methodOverride("_method"));
 
 // Router
 Routes(app);
