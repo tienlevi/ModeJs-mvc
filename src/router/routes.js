@@ -1,14 +1,13 @@
-import ProductModel from "../model/Products.js";
+import {
+  addPage,
+  getProduct,
+  handleAdd,
+} from "../controllers/ControllerData.js";
 
 function Routes(app) {
-  app.get("/", async (req, res) => {
-    try {
-      const products = await ProductModel.find({}).lean();
-      res.render("index", { products: products });
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  app.get("/", getProduct);
+  app.get("/add", addPage);
+  app.post("/add", handleAdd);
 }
 
 export default Routes;

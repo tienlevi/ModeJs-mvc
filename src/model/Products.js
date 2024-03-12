@@ -2,11 +2,13 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-const Product = new Schema({
-  name: { type: String },
-  price: { type: Number },
-  createAt: { type: Date, default: Date.now },
-});
+const Product = new Schema(
+  {
+    name: { type: String },
+    price: { type: Number },
+  },
+  { timestamps: true }
+);
 
 const ProductModel = mongoose.model("products", Product);
 

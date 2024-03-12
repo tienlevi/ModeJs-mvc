@@ -24,37 +24,34 @@ table {
   width: 100%;
 }
 
-.search-form {
-  max-width: 1000px;
-  margin: auto;
+.login-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
 
-  .search-input {
-    flex: 1;
-    padding: 10px;
-    height: 50px;
-    border: 1px solid $search-input-border;
-    background-color: $search-input-bg;
-    color: $search-input-color;
-
-    &::placeholder {
-      color: $search-input-color;
-    }
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
   }
-
-  .search-button {
-    height: 50px;
+  .login-container {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .login-container .submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
     border: none;
-    background-color: $search-button-bg;
-    color: $search-button-color;
+    border-radius: 3px;
     cursor: pointer;
-
-    &:hover {
-      background-color: darken($search-button-bg, 10%);
-    }
-
-    i {
-      font-size: 16px;
-    }
+  }
+  .login-container .submit::hover {
+    background-color: #45a049;
   }
 }
